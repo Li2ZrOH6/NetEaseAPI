@@ -11,12 +11,9 @@ api = NetEaseAPI()
 @app.route('/',methods = ['GET','POST'])
 def index():
     if request.method == 'POST':
-        # 处理按钮点击事件
         if request.form.get('submit') == 'Login':
-            # 处理按钮1的逻辑
             return redirect(url_for('login'))
         elif request.form.get('submit') == "No login":
-            # 处理按钮2的逻辑
             return redirect(url_for('search'))
     return render_template('index.html')
 
@@ -70,14 +67,10 @@ def show_user_profile(uid):
 @app.route('/recommend')
 def recommend_songs():
     result = api.get_recommend_songs()
-    # print(result)
     if result == False:
         return 'Please Login First!'
     else:
-        # length = len(result['data']["dailySongs"])
         return render_template('recommend.html',songList = result['data']['dailySongs'])
-        # return 'Returned ' + str(length) + ' songs.'
-
 
 @app.route('/search',methods = ['GET','POST'])
 def search():
