@@ -1,5 +1,3 @@
 {
-    "server_address" : "1.117.221.9:7391",
-    "login_id" : "",
-    "password" : ""
+    "server_address" : "http://example.com"
 }
