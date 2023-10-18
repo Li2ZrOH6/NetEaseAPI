@@ -21,6 +21,10 @@ class NetEaseAPI():
             2: cellphone
         password : Your password, default is none.
         id : Your login id, cellphone number or email address.
+        
+        Return Value:
+        1: Login Failed.
+        2: id or pwd not correct.
         '''
         if login_type == 1:
             url = self.address + "/login"
@@ -33,16 +37,16 @@ class NetEaseAPI():
         if response.status_code == 200:
             # store the cookies for further usage
             now = int(time.time()) % 20
-            self.cookie_path = 'temp_login_{}.json'.format(str(now))
+            self.cookie_path = 'temp_login/temp_login_{}.json'.format(str(now))
             with open(self.cookie_path ,'w') as fp:
                 cookies = requests.utils.dict_from_cookiejar(response.cookies)
                 json.dump(cookies,fp)
-            return 0
+            return 0,json.loads(response.content)
         elif response.status_code == 502:
             logger.warning("id or password not correct.")
             return 2
         else:
-            logger.warning("Login Failed.")
+            logger.warning("Login Failed:" + str(response.status_code))
             return 1
 
     def login_check(self):
@@ -84,7 +88,7 @@ class NetEaseAPI():
         Get your recommand songs.
         '''
         url = '/recommend/songs'
-        resp = self.default_request_get(url = url,need_login=False)
+        resp = self.default_request_get(url = url,need_login=True)
         return resp
     
     def search_songs(self,keywords : str = 'Luminous Memory',limits : int = 30, offset : int = 0):
