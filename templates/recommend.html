@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommend</title>
+</head>
+<body class="bg-light">
+    <h1 class="text-center mb-3 mt-3">NetEaseAPI</h1>
+    <h2 class="text-center mb-5">Designed by: Li2ZrOH6</h2>
+    <h3 class="text-center mb-5">v0.1.0 Demo</h3>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <!-- <table class="table">
+                <thead>
+                    <th>Song Pic</th>
+                    <th>Name</th>
+                    <th>Artist</th>
+                </thead>
+                <tbody>
+                    {% for item in songList %}
+                <td>
+                    <img src="{{item['al']['picUrl']}}" class="d-block mx-auto img-fluid">
+                </td>
+                <td>
+                    {{item['name']}}
+                </td>
+                <td>
+                    {{item['ar']}}
+                </td>
+                    {% endfor %}
+                </tbody>
+            </table> -->
+            {% for item in songList %}
+            <div class="row my-3 border border-secondry border-3">
+                <div class="col-2 border border-secondry border-right-3">
+                    <img src="{{item['al']['picUrl']}}" class="d-block mx-auto img-fluid">
+                </div>
+                <div class="col-8 border border-secondry border-right-3 border-left-3">
+                    <div class="row h4 pt-3 ps-3">
+                        {{item['name']}}
+                    </div>
+                    <div class="row h5 pt-3 ps-3">
+                        {{item['ar'][0]['name']}}
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-2"></div>
+    </div>
+</body>
+</html>

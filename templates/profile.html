@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+    <style>
+        .bg {       
+            background:url('{{bg_url}}') no-repeat center fixed;
+            background-size:contain;
+        }
+    </style>
+    <title>Profile</title>
+</head>
+<body class="bg-light bg">
+    <h1 class="text-center mb-3 mt-3 text-light">NetEaseAPI</h1>
+    <h2 class="text-center mb-5 text-light">Designed by: Li2ZrOH6</h2>
+    <h3 class="text-center mb-5 text-light">v0.1.0 Demo</h3>
+    <div class="row mb-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <img src="{{avatar_url}}" alt="avatar" class="rounded-circle d-block mx-auto"/>
+            <div class="small display-6 text-light text-center">Hello! {{user_name}}</div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row my-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="display-6 text-light text-center">Try some buttons!</div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row my-3">
+        <div class="col-3"></div>
+        <div class="col-6 row">
+            <form method="POST" class="d-flex justify-content-around">
+                <input class="btn btn-outline-success" type="submit" name="submit" value="Recommend Music">
+                <input class="btn btn-outline-info" type="submit" name="submit" value="My Playlist">
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row my-3">
+        <div class="col-3"></div>
+        <div class="col-6 row">
+            <form method="POST" class="d-flex justify-content-around">
+                <input class="btn btn-outline-warning" type="submit" name="submit" value="My Likes">
+                <input class="btn btn-outline-primary" type="submit" name="submit" value="Search Music">
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</body>
+</html>

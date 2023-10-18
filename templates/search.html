@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+    <title>Search</title>
+</head>
+<body class="bg-light">
+    <h1 class="text-center mb-3 mt-3">NetEaseAPI</h1>
+    <h2 class="text-center mb-5">Designed by: Li2ZrOH6</h2>
+    <h3 class="text-center mb-5">v0.1.0 Demo</h3>
+    <div class="row mt-5">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="display-5 text-center my-5">Search Music</div>
+            <form method="POST">
+                <div class="input-group my-3">
+                    <input type="text" name="query" class="form-control" placeholder="Enter music you want">
+                    <button class="btn btn-success" type="submit">Search!</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</body>
+</html>

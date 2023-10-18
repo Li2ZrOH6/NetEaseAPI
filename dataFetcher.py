@@ -34,19 +34,21 @@ class NetEaseAPI():
             response = requests.get(url=url,params={'phone':id,'password':password},headers=self.headers)
         else:
             raise ValueError
-        if response.status_code == 200:
+        cookies = response.cookies
+        response = json.loads(response.content)
+        if response['code'] == 200:
             # store the cookies for further usage
             now = int(time.time()) % 20
             self.cookie_path = 'temp_login/temp_login_{}.json'.format(str(now))
             with open(self.cookie_path ,'w') as fp:
-                cookies = requests.utils.dict_from_cookiejar(response.cookies)
+                cookies = requests.utils.dict_from_cookiejar(cookies)
                 json.dump(cookies,fp)
-            return 0,json.loads(response.content)
-        elif response.status_code == 502:
+            return 0,response
+        elif response['code'] == 502:
             logger.warning("id or password not correct.")
             return 2
         else:
-            logger.warning("Login Failed:" + str(response.status_code))
+            logger.warning("Login Failed:" + str(response['code']))
             return 1
 
     def login_check(self):

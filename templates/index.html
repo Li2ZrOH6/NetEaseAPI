@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
     <title>Index NetEaseAPI</title>
 </head>
-<body>
-    <form method="POST">
-        <input type="submit" name="submit" value="Login">
-        <input type="submit" name="submit" value="No login">
-    </form>
+<body class="bg-light">
+    <h1 class="text-center mb-3 mt-3">NetEaseAPI</h1>
+    <h2 class="text-center mb-5">Designed by: Li2ZrOH6</h2>
+    <h3 class="text-center mb-5">v0.1.0 Demo</h3>
+    <div class="row mb-3">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form method="POST" class="d-flex justify-content-around">
+                <input class="btn btn-outline-success" type="submit" name="submit" value="Login">
+                <input class="btn btn-outline-info" type="submit" name="submit" value="No login">
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 d-flex justify-content-around">
+            <span class="display-6">Login Your Netease Music Account.</span>
+            <span class="display-6">Use something WITHOUT login.</span>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    
 </body>
 </html>
