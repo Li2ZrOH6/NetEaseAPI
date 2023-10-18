@@ -1,6 +1,6 @@
 # NetEase API v0.1.0 Demo README
 
-该项目是基于()[https://github.com/Binaryify/NeteaseCloudMusicApi]的一个前端代码实现。
+该项目是基于[https://github.com/Binaryify/NeteaseCloudMusicApi]()的一个前端代码实现。
 
 ~~同时是为了完成Python与深度学习作业而开始做的一个小Demo~~
 
@@ -12,7 +12,7 @@
 
 ## 部署
 
-1. 参考()[https://github.com/Binaryify/NeteaseCloudMusicApi]，在本机或服务器上部署后端
+1. 参考[https://github.com/Binaryify/NeteaseCloudMusicApi]()，在本机或服务器上部署后端
 2. 将后端的（本地）IP地址填入`config.json`中的"server_address"项中，参见`config_example.json`。
 3. 运行`dataRender_Browser.py`并访问挂载前端的地址。
 
